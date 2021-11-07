@@ -71,6 +71,122 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-brew-常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2021-11-07T07:39:35.000Z" itemprop="datePublished">2021-11-07</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="p-name article-title" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">brew 常用命令</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>mac使用launchctl命令加载开机自动运行的服务，而brew service 可以简化这种操作。</p>
+<p>以brew install redis后自启动redis为例，使用launchctl启动过程如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</span><br><span class="line">2. launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br><span class="line">3. brew services restart redis</span><br></pre></td></tr></table></figure>
+
+<h3 id="brew-serices-常用命令"><a href="#brew-serices-常用命令" class="headerlink" title="brew serices 常用命令"></a><strong>brew serices 常用命令</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">brew services list # 查看使用brew安装的服务列表</span><br><span class="line"></span><br><span class="line">brew services run formula|–all # 启动服务（仅启动不注册）</span><br><span class="line"></span><br><span class="line">brew services start formula|–all # 启动服务，并注册</span><br><span class="line"></span><br><span class="line">brew services stop formula|–all  # 停止服务，并取消注册</span><br><span class="line"></span><br><span class="line">brew services restart formula|–all # 重启服务，并注册</span><br><span class="line"></span><br><span class="line">brew services cleanup # 清除已卸载应用的无用的配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="Brew-常用命令"><a href="#Brew-常用命令" class="headerlink" title="Brew 常用命令"></a>Brew 常用命令</h3><ul>
+<li>查看brew的帮助</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew –<span class="built_in">help</span> </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>安装软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>卸载软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall git </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>搜索软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search git </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示已经安装软件列表</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>更新某具体软件</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade git </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示软件内容信息</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info git </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>用浏览器打开</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew home </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示包依赖</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew deps </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>显示包的依赖树</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew deps --installed --tree </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>启动web服务器，可以通过浏览器访问<a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=WnucYz1FbnhAB1CdgZrGew==.xoWDXZ1X/zLH++NoeEwpuqclriRYB2cDh/B671Vv0Jw=">http://localhost:4567/</a> 来同网页来管理包</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew server </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除程序，和upgrade一样，单个软件删除和所有程序老版删除。</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew cleanup git </span><br><span class="line">brew cleanup </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>查看那些已安装的程序需要更新</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure>
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://example.com/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ckvp83o41000338tw0ig532h4" data-title="brew 常用命令" class="article-share-link">Share</a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+
+  
     <article id="post-Go-常用占位符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
     <a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" class="article-date">
@@ -345,7 +461,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-id="ckvos3dvg0000b3tw121c3dcd" data-title="Go fmt格式化常用占位符" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-id="ckvp83o3w000038tw4f020is4" data-title="Go fmt格式化常用占位符" class="article-share-link">Share</a>
       
       
       
@@ -386,13 +502,15 @@
 
 <h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netcat所做的就是在两台电脑之间建立链接并返回两个数据流</span><br></pre></td></tr></table></figure>
 
+<h2 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h2><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname [-amnrsv]</span><br></pre></td></tr></table></figure>
 
+<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-a或--all 　显示全部的信息。</span><br><span class="line">-m或--machine 　显示电脑类型。</span><br><span class="line">-n或--nodename 　显示在网络上的主机名称。</span><br><span class="line">-r或--release 　显示操作系统的发行编号。</span><br><span class="line">-s或--sysname 　显示操作系统名称。</span><br><span class="line">-v 　显示操作系统的版本。</span><br><span class="line">--help 　显示帮助。</span><br><span class="line">--version 　显示版本信息。</span><br></pre></td></tr></table></figure>
 
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" data-id="ckvos3dvi0001b3twadrz3jv2" data-title="Linux 常用命令详解" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" data-id="ckvp83o3z000138twblkehrqb" data-title="Linux 常用命令详解" class="article-share-link">Share</a>
       
       
       
@@ -445,7 +563,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/05/hello-world/" data-id="ckvmhe06n00006jtwcnqi7ld3" data-title="Hello World" class="article-share-link">Share</a>
+      <a data-url="http://example.com/2021/11/05/hello-world/" data-id="ckvp83o41000438tw6sqecnc1" data-title="Hello World" class="article-share-link">Share</a>
       
       
       
@@ -470,7 +588,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go%E5%9F%BA%E7%A1%80/" rel="tag">Go基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li></ul>
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go%E5%9F%BA%E7%A1%80/" rel="tag">Go基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li></ul>
     </div>
   </div>
 
@@ -480,7 +598,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/Go%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Go基础</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 10px;">常用命令</a>
+      <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/Go%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Go基础</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 20px;">常用命令</a>
     </div>
   </div>
 
@@ -500,6 +618,10 @@
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">brew 常用命令</a>
+          </li>
         
           <li>
             <a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/">Go fmt格式化常用占位符</a>
