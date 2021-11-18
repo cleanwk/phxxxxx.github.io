@@ -1,789 +1,260 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta property="og:type" content="website">
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Hexo</title><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://example.com/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png">
 <meta property="article:author" content="John Doe">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Hexo',
+  isPost: false,
+  isHome: true,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2021-11-18 16:07:50'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
   
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
   
-  
-    <link rel="shortcut icon" href="/favicon.png">
-  
-  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
     
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
-
-  
-  
-<link rel="stylesheet" href="/css/style.css">
-
-  
-    
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
-
-  
-<meta name="generator" content="Hexo 5.4.0"></head>
-
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
         
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-MQ技术选型-对比" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" class="article-date">
-  <time class="dt-published" datetime="2021-11-09T03:35:15.000Z" itemprop="datePublished">2021-11-09</time>
-</a>
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
     
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/">MQ技术选型 对比</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="Kafka、ActiveMQ、RabbitMQ、RocketMQ-有什么优缺点？"><a href="#Kafka、ActiveMQ、RabbitMQ、RocketMQ-有什么优缺点？" class="headerlink" title="Kafka、ActiveMQ、RabbitMQ、RocketMQ 有什么优缺点？"></a>Kafka、ActiveMQ、RabbitMQ、RocketMQ 有什么优缺点？</h3><table>
-<thead>
-<tr>
-<th>特性</th>
-<th>ActiveMQ</th>
-<th>RabbitMQ</th>
-<th>RocketMQ</th>
-<th>Kafka</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>单机吞吐量</td>
-<td>万级，比 RocketMQ、Kafka 低一个数量级</td>
-<td>同 ActiveMQ</td>
-<td>10 万级，支撑高吞吐</td>
-<td>10 万级，高吞吐，一般配合大数据类的系统来进行实时数据计算、日志采集等场景</td>
-</tr>
-<tr>
-<td>topic 数量对吞吐量的影响</td>
-<td></td>
-<td></td>
-<td>topic 可以达到几百/几千的级别，吞吐量会有较小幅度的下降，这是 RocketMQ 的一大优势，在同等机器下，可以支撑大量的 topic</td>
-<td>topic 从几十到几百个时候，吞吐量会大幅度下降，在同等机器下，Kafka 尽量保证 topic 数量不要过多，如果要支撑大规模的 topic，需要增加更多的机器资源</td>
-</tr>
-<tr>
-<td>时效性</td>
-<td>ms 级</td>
-<td>微秒级，这是 RabbitMQ 的一大特点，延迟最低</td>
-<td>ms 级</td>
-<td>延迟在 ms 级以内</td>
-</tr>
-<tr>
-<td>可用性</td>
-<td>高，基于主从架构实现高可用</td>
-<td>同 ActiveMQ</td>
-<td>非常高，分布式架构</td>
-<td>非常高，分布式，一个数据多个副本，少数机器宕机，不会丢失数据，不会导致不可用</td>
-</tr>
-<tr>
-<td>消息可靠性</td>
-<td>有较低的概率丢失数据</td>
-<td>基本不丢</td>
-<td>经过参数优化配置，可以做到 0 丢失</td>
-<td>同 RocketMQ</td>
-</tr>
-<tr>
-<td>功能支持</td>
-<td>MQ 领域的功能极其完备</td>
-<td>基于 erlang 开发，并发能力很强，性能极好，延时很低</td>
-<td>MQ 功能较为完善，还是分布式的，扩展性好</td>
-<td>功能较为简单，主要支持简单的 MQ 功能，在大数据领域的实时计算以及日志采集被大规模使用</td>
-</tr>
-</tbody></table>
-<p>综上，各种对比之后，有如下建议：</p>
-<p>一般的业务系统要引入 MQ，最早大家都用 ActiveMQ，但是现在确实大家用的不多了，没经过大规模吞吐量场景的验证，社区也不是很活跃，所以大家还是算了吧，我个人不推荐用这个了；</p>
-<p>后来大家开始用 RabbitMQ，但是确实 erlang 语言阻止了大量的 Java 工程师去深入研究和掌控它，对公司而言，几乎处于不可控的状态，但是确实人家是开源的，比较稳定的支持，活跃度也高；</p>
-<p>不过现在确实越来越多的公司会去用 RocketMQ，确实很不错，毕竟是阿里出品，但社区可能有突然黄掉的风险（目前 RocketMQ 已捐给 <a target="_blank" rel="noopener" href="https://github.com/apache/rocketmq">Apache</a>，但 GitHub 上的活跃度其实不算高）对自己公司技术实力有绝对自信的，推荐用 RocketMQ，否则回去老老实实用 RabbitMQ 吧，人家有活跃的开源社区，绝对不会黄。</p>
-<p>所以<strong>中小型公司</strong>，技术实力较为一般，技术挑战不是特别高，用 RabbitMQ 是不错的选择；<strong>大型公司</strong>，基础架构研发实力较强，用 RocketMQ 是很好的选择。</p>
-<p>如果是<strong>大数据领域</strong>的实时计算、日志采集等场景，用 Kafka 是业内标准的，绝对没问题，社区活跃度很高，绝对不会黄，何况几乎是全世界这个领域的事实性规范。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" data-id="ckvrjm6t60000ldtw55kc0op1" data-title="MQ技术选型 对比" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%EF%BC%8CMQ/" rel="tag">技术选型，MQ</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-brew-常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
-  <time class="dt-published" datetime="2021-11-07T07:39:35.000Z" itemprop="datePublished">2021-11-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">brew 常用命令</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>mac使用launchctl命令加载开机自动运行的服务，而brew service 可以简化这种操作。</p>
-<p>以brew install redis后自启动redis为例，使用launchctl启动过程如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">1. ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents</span><br><span class="line">2. launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist</span><br><span class="line">3. brew services restart redis</span><br></pre></td></tr></table></figure>
-
-<h3 id="brew-serices-常用命令"><a href="#brew-serices-常用命令" class="headerlink" title="brew serices 常用命令"></a><strong>brew serices 常用命令</strong></h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">brew services list # 查看使用brew安装的服务列表</span><br><span class="line"></span><br><span class="line">brew services run formula|–all # 启动服务（仅启动不注册）</span><br><span class="line"></span><br><span class="line">brew services start formula|–all # 启动服务，并注册</span><br><span class="line"></span><br><span class="line">brew services stop formula|–all  # 停止服务，并取消注册</span><br><span class="line"></span><br><span class="line">brew services restart formula|–all # 重启服务，并注册</span><br><span class="line"></span><br><span class="line">brew services cleanup # 清除已卸载应用的无用的配置</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
-<h3 id="Brew-常用命令"><a href="#Brew-常用命令" class="headerlink" title="Brew 常用命令"></a>Brew 常用命令</h3><ul>
-<li>查看brew的帮助</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew –<span class="built_in">help</span> </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>安装软件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install git </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>卸载软件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew uninstall git </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>搜索软件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew search git </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>显示已经安装软件列表</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew list </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>更新软件，把所有的Formula目录更新，并且会对本机已经安装并有更新的软件用*标明。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew update </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>更新某具体软件</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew upgrade git </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>显示软件内容信息</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew info git </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>用浏览器打开</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew home </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>显示包依赖</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew deps </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>显示包的依赖树</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew deps --installed --tree </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>启动web服务器，可以通过浏览器访问<a target="_blank" rel="noopener" href="https://link.segmentfault.com/?enc=WnucYz1FbnhAB1CdgZrGew==.xoWDXZ1X/zLH++NoeEwpuqclriRYB2cDh/B671Vv0Jw=">http://localhost:4567/</a> 来同网页来管理包</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew server </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>删除程序，和upgrade一样，单个软件删除和所有程序老版删除。</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">brew cleanup git </span><br><span class="line">brew cleanup </span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>查看那些已安装的程序需要更新</li>
-</ul>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew outdated</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="ckvp8qrwt0003gltw6b22h4xg" data-title="brew 常用命令" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Go-常用占位符" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" class="article-date">
-  <time class="dt-published" datetime="2021-11-06T11:25:49.000Z" itemprop="datePublished">2021-11-06</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/">Go fmt格式化常用占位符</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h3 id="通用占位符"><a href="#通用占位符" class="headerlink" title="通用占位符"></a>通用占位符</h3><table>
-<thead>
-<tr>
-<th align="center">占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">%v</td>
-<td>输出值得默认格式</td>
-</tr>
-<tr>
-<td align="center">%+v</td>
-<td>与%v类似，输出时连着字段名一起输出</td>
-</tr>
-<tr>
-<td align="center">%#v</td>
-<td>输出值得Go语法表示</td>
-</tr>
-<tr>
-<td align="center">%T</td>
-<td>打印值得类型</td>
-</tr>
-<tr>
-<td align="center">%%</td>
-<td>百分号</td>
-</tr>
-</tbody></table>
-<h4 id="代码示例"><a href="#代码示例" class="headerlink" title="代码示例"></a>代码示例</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">fmt.Printf(<span class="string">&quot;%v\n&quot;</span>, <span class="number">100</span>)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%v\n&quot;</span>, <span class="literal">false</span>)</span><br><span class="line">o := <span class="keyword">struct</span>&#123; name <span class="keyword">string</span> &#125;&#123;<span class="string">&quot;小鸟&quot;</span>&#125;</span><br><span class="line">fmt.Printf(<span class="string">&quot;%v\n&quot;</span>, o)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%#v\n&quot;</span>, o)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%T\n&quot;</span>, o)</span><br><span class="line">fmt.Printf(<span class="string">&quot;100%%\n&quot;</span>)</span><br></pre></td></tr></table></figure>
-
-<h4 id="输出结果"><a href="#输出结果" class="headerlink" title="输出结果"></a>输出结果</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">100</span></span><br><span class="line"><span class="literal">false</span></span><br><span class="line">&#123;枯藤&#125;</span><br><span class="line"><span class="keyword">struct</span> &#123; name <span class="keyword">string</span> &#125;&#123;name:<span class="string">&quot;枯藤&quot;</span>&#125;</span><br><span class="line"><span class="keyword">struct</span> &#123; name <span class="keyword">string</span> &#125;</span><br><span class="line"><span class="number">100</span>%</span><br></pre></td></tr></table></figure>
-
-<h4 id="布尔型"><a href="#布尔型" class="headerlink" title="布尔型"></a>布尔型</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%t</td>
-<td>true或false</td>
-</tr>
-</tbody></table>
-<h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%b</td>
-<td>表示为二进制</td>
-</tr>
-<tr>
-<td>%c</td>
-<td>该值对应的unicode码值</td>
-</tr>
-<tr>
-<td>%d</td>
-<td>表示为十进制</td>
-</tr>
-<tr>
-<td>%o</td>
-<td>表示为八进制</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>表示为十六进制，使用a-f</td>
-</tr>
-<tr>
-<td>%X</td>
-<td>表示为十六进制，使用A-F</td>
-</tr>
-<tr>
-<td>%U</td>
-<td>表示为Unicode格式：U+1234，等价于”U+%04X”</td>
-</tr>
-<tr>
-<td>%q</td>
-<td>该值对应的单引号括起来的go语法字符字面值，必要时会采用安全的转义表示</td>
-</tr>
-</tbody></table>
-<p>示例代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">n := <span class="number">65</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%b\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%c\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%d\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%o\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%x\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%X\n&quot;</span>, n)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">1000001</span><br><span class="line">A</span><br><span class="line">65</span><br><span class="line">101</span><br><span class="line">41</span><br><span class="line">41</span><br></pre></td></tr></table></figure>
-
-<h4 id="浮点数与复数"><a href="#浮点数与复数" class="headerlink" title="浮点数与复数"></a>浮点数与复数</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%b</td>
-<td>无小数部分、二进制指数的科学计数法，如-123456p-78</td>
-</tr>
-<tr>
-<td>%e</td>
-<td>科学计数法，如-1234.456e+78</td>
-</tr>
-<tr>
-<td>%E</td>
-<td>科学计数法，如-1234.456E+78</td>
-</tr>
-<tr>
-<td>%f</td>
-<td>有小数部分但无指数部分，如123.456</td>
-</tr>
-<tr>
-<td>%F</td>
-<td>等价于%f</td>
-</tr>
-<tr>
-<td>%g</td>
-<td>根据实际情况采用%e或%f格式（以获得更简洁、准确的输出）</td>
-</tr>
-<tr>
-<td>%G</td>
-<td>根据实际情况采用%E或%F格式（以获得更简洁、准确的输出）</td>
-</tr>
-</tbody></table>
-<p>示例代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">f := <span class="number">12.34</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%b\n&quot;</span>, f)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%e\n&quot;</span>, f)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%E\n&quot;</span>, f)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%f\n&quot;</span>, f)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%g\n&quot;</span>, f)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%G\n&quot;</span>, f)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">6946802425218990p-49</span><br><span class="line">1.234000e+01</span><br><span class="line">1.234000E+01</span><br><span class="line">12.340000</span><br><span class="line">12.34</span><br><span class="line">12.34</span><br></pre></td></tr></table></figure>
-
-<h4 id="字符串和-byte"><a href="#字符串和-byte" class="headerlink" title="字符串和[]byte"></a>字符串和[]byte</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%s</td>
-<td>直接输出字符串或者[]byte</td>
-</tr>
-<tr>
-<td>%q</td>
-<td>该值对应的双引号括起来的go语法字符串字面值，必要时会采用安全的转义表示</td>
-</tr>
-<tr>
-<td>%x</td>
-<td>每个字节用两字符十六进制数表示（使用a-f</td>
-</tr>
-<tr>
-<td>%X</td>
-<td>每个字节用两字符十六进制数表示（使用A-F）</td>
-</tr>
-</tbody></table>
-<p>示例代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">s := <span class="string">&quot;枯藤&quot;</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%q\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%x\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%X\n&quot;</span>, s)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">枯藤</span><br><span class="line">&quot;枯藤&quot;</span><br><span class="line">e69eafe897a4</span><br><span class="line">E69EAFE897A4</span><br></pre></td></tr></table></figure>
-
-<h4 id="指针"><a href="#指针" class="headerlink" title="指针"></a>指针</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%p</td>
-<td>表示为十六进制，并加上前导的0x</td>
-</tr>
-</tbody></table>
-<p>示例代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">a := <span class="number">18</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%p\n&quot;</span>, &amp;a)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%#p\n&quot;</span>, &amp;a)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">0xc000054058</span><br><span class="line">c000054058</span><br></pre></td></tr></table></figure>
-
-<h4 id="宽度标识符"><a href="#宽度标识符" class="headerlink" title="宽度标识符"></a>宽度标识符</h4><p>宽度通过一个紧跟在百分号后面的十进制数指定，如果未指定宽度，则表示值时除必需之外不作填充。精度通过（可选的）宽度后跟点号后跟的十进制数指定。如果未指定精度，会使用默认精度；如果点号后没有跟数字，表示精度为0。举例如下</p>
-<table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>%f</td>
-<td>默认宽度，默认精度</td>
-</tr>
-<tr>
-<td>%9f</td>
-<td>宽度9，默认精度</td>
-</tr>
-<tr>
-<td>%.2f</td>
-<td>默认宽度，精度2</td>
-</tr>
-<tr>
-<td>%9.2f</td>
-<td>宽度9，精度2</td>
-</tr>
-<tr>
-<td>%9.f</td>
-<td>宽度9，精度0</td>
-</tr>
-</tbody></table>
-<p>示例代码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">n := <span class="number">88.88</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%f\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%9f\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%.2f\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%9.2f\n&quot;</span>, n)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%9.f\n&quot;</span>, n)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">88.880000</span><br><span class="line">88.880000</span><br><span class="line">88.88</span><br><span class="line">    88.88</span><br><span class="line">       89</span><br></pre></td></tr></table></figure>
-
-<h4 id="其他falg"><a href="#其他falg" class="headerlink" title="其他falg"></a>其他falg</h4><table>
-<thead>
-<tr>
-<th>占位符</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>’+’</td>
-<td>总是输出数值的正负号；对%q（%+q）会生成全部是ASCII字符的输出（通过转义）；</td>
-</tr>
-<tr>
-<td>’ ‘</td>
-<td>对数值，正数前加空格而负数前加负号；对字符串采用%x或%X时（% x或% X）会给各打印的字节之间加空格</td>
-</tr>
-<tr>
-<td>’-’</td>
-<td>在输出右边填充空白而不是默认的左边（即从默认的右对齐切换为左对齐）；</td>
-</tr>
-<tr>
-<td>’#’</td>
-<td>八进制数前加0（%#o），十六进制数前加0x（%#x）或0X（%#X），指针去掉前面的0x（%#p）对%q（%#q），对%U（%#U）会输出空格和单引号括起来的go字面值；</td>
-</tr>
-<tr>
-<td>‘0’</td>
-<td>使用0而不是空格填充，对于数值类型会把填充的0放在正负号后面；</td>
-</tr>
-</tbody></table>
-<p>举个例子：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">s := <span class="string">&quot;枯藤&quot;</span></span><br><span class="line">fmt.Printf(<span class="string">&quot;%s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%5s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%-5s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%5.7s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%-5.7s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%5.2s\n&quot;</span>, s)</span><br><span class="line">fmt.Printf(<span class="string">&quot;%05s\n&quot;</span>, s)</span><br></pre></td></tr></table></figure>
-
-<p>输出结果如下：</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">枯藤</span><br><span class="line">   枯藤</span><br><span class="line">枯藤</span><br><span class="line">   枯藤</span><br><span class="line">枯藤</span><br><span class="line">   枯藤</span><br><span class="line">000枯藤</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" data-id="ckvp8qrwo0000gltw7apnbfmo" data-title="Go fmt格式化常用占位符" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Go%E5%9F%BA%E7%A1%80/" rel="tag">Go基础</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-Linux-常用命令详解" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" class="article-date">
-  <time class="dt-published" datetime="2021-11-05T14:54:10.000Z" itemprop="datePublished">2021-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">Linux 常用命令详解</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <h2 id="nc（netcat）"><a href="#nc（netcat）" class="headerlink" title="nc（netcat）"></a>nc（netcat）</h2><h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a>参考文章</h4><p><a target="_blank" rel="noopener" href="https://wsgzao.github.io/post/nc/">https://wsgzao.github.io/post/nc/</a> </p>
-<h4 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">-n 直接使用IP地址，而不通过域名服务器。</span><br><span class="line">-o&lt;输出文件&gt; 指定文件名称，把往来传输的数据以16进制字码倾倒成该文件保存。</span><br><span class="line">-p&lt;通信端口&gt; 设置本地主机使用的通信端口。</span><br><span class="line">-u 使用UDP传输协议。</span><br><span class="line">-v 显示指令执行过程。</span><br><span class="line">-w&lt;超时秒数&gt; 设置等待连线的时间。</span><br><span class="line">-z 使用0输入/输出模式，只在扫描通信端口时使用。</span><br></pre></td></tr></table></figure>
-
-<h4 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">netcat所做的就是在两台电脑之间建立链接并返回两个数据流</span><br></pre></td></tr></table></figure>
-
-<h2 id="uname"><a href="#uname" class="headerlink" title="uname"></a>uname</h2><h4 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">uname [-amnrsv]</span><br></pre></td></tr></table></figure>
-
-<h3 id="参数-1"><a href="#参数-1" class="headerlink" title="参数"></a>参数</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-a或--all 　显示全部的信息。</span><br><span class="line">-m或--machine 　显示电脑类型。</span><br><span class="line">-n或--nodename 　显示在网络上的主机名称。</span><br><span class="line">-r或--release 　显示操作系统的发行编号。</span><br><span class="line">-s或--sysname 　显示操作系统名称。</span><br><span class="line">-v 　显示操作系统的版本。</span><br><span class="line">--help 　显示帮助。</span><br><span class="line">--version 　显示版本信息。</span><br></pre></td></tr></table></figure>
-
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" data-id="ckvp8qrwr0001gltw0j4laitw" data-title="Linux 常用命令详解" class="article-share-link">Share</a>
-      
-      
-      
-  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-    <article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2021/11/05/hello-world/" class="article-date">
-  <time class="dt-published" datetime="2021-11-05T14:33:23.179Z" itemprop="datePublished">2021-11-05</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="p-name article-title" href="/2021/11/05/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2021/11/05/hello-world/" data-id="ckvp8qrwt0004gltw0zykaigf" data-title="Hello World" class="article-share-link">Share</a>
-      
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
-    <div class="widget">
-      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go/" rel="tag">Go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Go%E5%9F%BA%E7%A1%80/" rel="tag">Go基础</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Linux/" rel="tag">Linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" rel="tag">工具使用</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" rel="tag">常用命令</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%EF%BC%8CMQ/" rel="tag">技术选型，MQ</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
-    <div class="widget tagcloud">
-      <a href="/tags/Go/" style="font-size: 10px;">Go</a> <a href="/tags/Go%E5%9F%BA%E7%A1%80/" style="font-size: 10px;">Go基础</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 10px;">工具使用</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 20px;">常用命令</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%EF%BC%8CMQ/" style="font-size: 10px;">技术选型，MQ</a>
-    </div>
-  </div>
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2021/11/">November 2021</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/">MQ技术选型 对比</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">brew 常用命令</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/">Go fmt格式化常用占位符</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/">Linux 常用命令详解</a>
-          </li>
-        
-          <li>
-            <a href="/2021/11/05/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      
-      &copy; 2021 John Doe<br>
-      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-
-<script src="/js/jquery-3.4.1.min.js"></script>
-
-
-
-  
-<script src="/fancybox/jquery.fancybox.min.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-
-  </div>
-</body>
-</html>
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div></div></div><hr/></div></div><div class="page" id="body-wrap"><header class="full_page" id="page-header"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="site-info"><h1 id="site-title">Hexo</h1></div><div id="scroll-down"><i class="fas fa-angle-down scroll-down-effects"></i></div></header><main class="layout" id="content-inner"><div class="recent-posts" id="recent-posts"><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go-常用基础命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令">Go-常用基础命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-18T04:14:51.000Z" title="Created 2021-11-18 12:14:51">2021-11-18</time></span></div><div class="content">go build此命令用于编译指定的源码文件或代码包及依赖包。
+若要指定文件名，可使用参数 -o，也可指定文件输出的目录。
+12go build -o main.exe
+
+
+-o 指定输出的文件名，可以带上路径，例如 go build -o a/b/c
+-i 安装相应的包，编译+go install
+-a 更新全部已经是最新的包的，但是对标准包不适用
+-n 把需要执行的编译命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的
+-p n 指定可以并行可运行的编译数目，默认是CPU数目
+-race 开启编译的时候自动检测数据竞争的情况，目前只支持64位的机器
+-v 打印出来我们正在编译的包名
+-work 打印出来编译时候的临时文件夹名称，并且如果已经存在的话就不要删除
+-x 打印出来执行的命令，其实就是和-n的结果类似，只是这个会执行
+-ccflags &#39;arg list&#39; 传递参数给5c, 6c, 8c 调用
+-compiler name 指定相应的编译器，gccgo还是gc
+-gccgoflags &#39;arg list&#39; 传递参数给gccgo编 ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MQ技术选型 对比"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比">MQ技术选型 对比</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-09T03:35:15.000Z" title="Created 2021-11-09 11:35:15">2021-11-09</time></span></div><div class="content">Kafka、ActiveMQ、RabbitMQ、RocketMQ 有什么优缺点？
+
+
+特性
+ActiveMQ
+RabbitMQ
+RocketMQ
+Kafka
+
+
+
+单机吞吐量
+万级，比 RocketMQ、Kafka 低一个数量级
+同 ActiveMQ
+10 万级，支撑高吞吐
+10 万级，高吞吐，一般配合大数据类的系统来进行实时数据计算、日志采集等场景
+
+
+topic 数量对吞吐量的影响
+
+
+topic 可以达到几百/几千的级别，吞吐量会有较小幅度的下降，这是 RocketMQ 的一大优势，在同等机器下，可以支撑大量的 topic
+topic 从几十到几百个时候，吞吐量会大幅度下降，在同等机器下，Kafka 尽量保证 topic 数量不要过多，如果要支撑大规模的 topic，需要增加更多的机器资源
+
+
+时效性
+ms 级
+微秒级，这是 RabbitMQ 的一大特点，延迟最低
+ms 级
+延迟在 ms 级以内
+
+
+可用性
+高，基于主从架构实现高可用
+同 ActiveMQ
+非常高，分布式架构
+非常高，分布式，一个数据多个副本，少数机器宕机，不会丢失数据，不会导致不可用
+
+
+消息可靠性
+有较低的概 ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="brew 常用命令"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令">brew 常用命令</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-07T07:39:35.000Z" title="Created 2021-11-07 15:39:35">2021-11-07</time></span></div><div class="content">mac使用launchctl命令加载开机自动运行的服务，而brew service 可以简化这种操作。
+以brew install redis后自启动redis为例，使用launchctl启动过程如下：
+1231. ln -sfv /usr/local/opt/redis/*.plist ~/Library/LaunchAgents2. launchctl load ~/Library/LaunchAgents/homebrew.mxcl.redis.plist3. brew services restart redis
+
+brew serices 常用命令123456789101112brew services list # 查看使用brew安装的服务列表brew services run formula|–all # 启动服务（仅启动不注册）brew services start formula|–all # 启动服务，并注册brew services stop formula|–all  # 停止服务，并取消注册brew services restart formula|–all ...</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go fmt格式化常用占位符"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符">Go fmt格式化常用占位符</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-06T11:25:49.000Z" title="Created 2021-11-06 19:25:49">2021-11-06</time></span></div><div class="content">通用占位符
+
+
+占位符
+说明
+
+
+
+%v
+输出值得默认格式
+
+
+%+v
+与%v类似，输出时连着字段名一起输出
+
+
+%#v
+输出值得Go语法表示
+
+
+%T
+打印值得类型
+
+
+%%
+百分号
+
+
+代码示例1234567fmt.Printf(&quot;%v\n&quot;, 100)fmt.Printf(&quot;%v\n&quot;, false)o := struct&#123; name string &#125;&#123;&quot;小鸟&quot;&#125;fmt.Printf(&quot;%v\n&quot;, o)fmt.Printf(&quot;%#v\n&quot;, o)fmt.Printf(&quot;%T\n&quot;, o)fmt.Printf(&quot;100%%\n&quot;)
+
+输出结果123456100false&#123;枯藤&#125;struct &#123; name string &#125;&#123;name:&quot;枯藤&quot;&#125;struct &#123; name string &#125;100%
+
+布尔型
+ ...</div></div></div><div class="recent-post-item"><div class="post_cover left_radius"><a href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux 常用命令详解"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解">Linux 常用命令详解</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-05T14:54:10.000Z" title="Created 2021-11-05 22:54:10">2021-11-05</time></span></div><div class="content">nc（netcat）参考文章https://wsgzao.github.io/post/nc/ 
+参数1234567-n 直接使用IP地址，而不通过域名服务器。-o&lt;输出文件&gt; 指定文件名称，把往来传输的数据以16进制字码倾倒成该文件保存。-p&lt;通信端口&gt; 设置本地主机使用的通信端口。-u 使用UDP传输协议。-v 显示指令执行过程。-w&lt;超时秒数&gt; 设置等待连线的时间。-z 使用0输入/输出模式，只在扫描通信端口时使用。
+
+功能1netcat所做的就是在两台电脑之间建立链接并返回两个数据流
+
+uname语法1uname [-amnrsv]
+
+参数12345678-a或--all 　显示全部的信息。-m或--machine 　显示电脑类型。-n或--nodename 　显示在网络上的主机名称。-r或--release 　显示操作系统的发行编号。-s或--sysname 　显示操作系统名称。-v 　显示操作系统的版本。--help 　显示帮助。--version 　显示版本信息。
+
+</div></div></div><div class="recent-post-item"><div class="post_cover right_radius"><a href="/2021/11/05/hello-world/" title="Hello World">     <img class="post_bg" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Hello World"></a></div><div class="recent-post-info"><a class="article-title" href="/2021/11/05/hello-world/" title="Hello World">Hello World</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">Created</span><time datetime="2021-11-05T14:33:23.179Z" title="Created 2021-11-05 22:33:23">2021-11-05</time></span></div><div class="content">Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post1$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server1$ hexo server
+
+More info: Server
+Generate static files1$ hexo generate
+
+More info: Generating
+Deploy to remote sites1$ hexo deploy
+
+More info: Deployment
+</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go-常用基础命令"/></a><div class="content"><a class="title" href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令">Go-常用基础命令</a><time datetime="2021-11-18T04:14:51.000Z" title="Created 2021-11-18 12:14:51">2021-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MQ技术选型 对比"/></a><div class="content"><a class="title" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比">MQ技术选型 对比</a><time datetime="2021-11-09T03:35:15.000Z" title="Created 2021-11-09 11:35:15">2021-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="brew 常用命令"/></a><div class="content"><a class="title" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令">brew 常用命令</a><time datetime="2021-11-07T07:39:35.000Z" title="Created 2021-11-07 15:39:35">2021-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go fmt格式化常用占位符"/></a><div class="content"><a class="title" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符">Go fmt格式化常用占位符</a><time datetime="2021-11-06T11:25:49.000Z" title="Created 2021-11-06 19:25:49">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux 常用命令详解"/></a><div class="content"><a class="title" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解">Linux 常用命令详解</a><time datetime="2021-11-05T14:54:10.000Z" title="Created 2021-11-05 22:54:10">2021-11-05</time></div></div></div></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>Tags</span></div><div class="card-tag-cloud"><a href="/tags/Go/" style="font-size: 1.5em; color: #99a9bf">Go</a> <a href="/tags/Go%E5%9F%BA%E7%A1%80/" style="font-size: 1.5em; color: #99a9bf">Go基础</a> <a href="/tags/Linux/" style="font-size: 1.1em; color: #999">Linux</a> <a href="/tags/MQ/" style="font-size: 1.1em; color: #999">MQ</a> <a href="/tags/%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8/" style="font-size: 1.1em; color: #999">工具使用</a> <a href="/tags/%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" style="font-size: 1.5em; color: #99a9bf">常用命令</a> <a href="/tags/%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B/" style="font-size: 1.1em; color: #999">技术选型</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>Archives</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2021/11/"><span class="card-archive-list-date">November 2021</span><span class="card-archive-list-count">6</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>Info</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">Article :</div><div class="item-count">6</div></div><div class="webinfo-item"><div class="item-name">UV :</div><div class="item-count" id="busuanzi_value_site_uv"></div></div><div class="webinfo-item"><div class="item-name">PV :</div><div class="item-count" id="busuanzi_value_site_pv"></div></div><div class="webinfo-item"><div class="item-name">Last Push :</div><div class="item-count" id="last-push-date" data-lastPushDate="2021-11-18T08:07:50.539Z"></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

@@ -1,0 +1,267 @@
+<!DOCTYPE html><html lang="en" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Go-常用基础命令 | Hexo</title><meta name="keywords" content="Go,Go基础"><meta name="author" content="John Doe"><meta name="copyright" content="John Doe"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="go build此命令用于编译指定的源码文件或代码包及依赖包。 若要指定文件名，可使用参数 -o，也可指定文件输出的目录。 12go build -o main.exe   -o 指定输出的文件名，可以带上路径，例如 go build -o a&#x2F;b&#x2F;c -i 安装相应的包，编译+go install -a 更新全部已经是最新的包的，但是对标准包不适用 -n 把需要执行的编译命令打印出来，但是不执行">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Go-常用基础命令">
+<meta property="og:url" content="http://example.com/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="go build此命令用于编译指定的源码文件或代码包及依赖包。 若要指定文件名，可使用参数 -o，也可指定文件输出的目录。 12go build -o main.exe   -o 指定输出的文件名，可以带上路径，例如 go build -o a&#x2F;b&#x2F;c -i 安装相应的包，编译+go install -a 更新全部已经是最新的包的，但是对标准包不适用 -n 把需要执行的编译命令打印出来，但是不执行">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg">
+<meta property="article:published_time" content="2021-11-18T04:14:51.000Z">
+<meta property="article:modified_time" content="2021-11-18T04:41:39.915Z">
+<meta property="article:author" content="John Doe">
+<meta property="article:tag" content="Go">
+<meta property="article:tag" content="Go基础">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: 'Just',
+    min: 'minutes ago',
+    hour: 'hours ago',
+    day: 'days ago',
+    month: 'months ago'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    jQuery: 'https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js',
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+    },
+    fancybox: {
+      js: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Go-常用基础命令',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2021-11-18 12:41:39'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if (GLOBAL_CONFIG_SITE.isHome && /iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 5.4.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div></div></div><hr/></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Hexo</a></span><div id="menus"><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">Go-常用基础命令</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">Created</span><time class="post-meta-date-created" datetime="2021-11-18T04:14:51.000Z" title="Created 2021-11-18 12:14:51">2021-11-18</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">Updated</span><time class="post-meta-date-updated" datetime="2021-11-18T04:41:39.915Z" title="Updated 2021-11-18 12:41:39">2021-11-18</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Go-常用基础命令"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">Post View:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h2 id="go-build"><a href="#go-build" class="headerlink" title="go build"></a>go build</h2><p>此命令用于编译指定的源码文件或代码包及依赖包。</p>
+<p>若要指定文件名，可使用参数 -o，也可指定文件输出的目录。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">go build -o main.exe</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><code>-o</code> 指定输出的文件名，可以带上路径，例如 <code>go build -o a/b/c</code></li>
+<li><code>-i</code> 安装相应的包，编译+<code>go install</code></li>
+<li><code>-a</code> 更新全部已经是最新的包的，但是对标准包不适用</li>
+<li><code>-n</code> 把需要执行的编译命令打印出来，但是不执行，这样就可以很容易的知道底层是如何运行的</li>
+<li><code>-p n</code> 指定可以并行可运行的编译数目，默认是CPU数目</li>
+<li><code>-race</code> 开启编译的时候自动检测数据竞争的情况，目前只支持64位的机器</li>
+<li><code>-v</code> 打印出来我们正在编译的包名</li>
+<li><code>-work</code> 打印出来编译时候的临时文件夹名称，并且如果已经存在的话就不要删除</li>
+<li><code>-x</code> 打印出来执行的命令，其实就是和<code>-n</code>的结果类似，只是这个会执行</li>
+<li><code>-ccflags &#39;arg list&#39;</code> 传递参数给5c, 6c, 8c 调用</li>
+<li><code>-compiler name</code> 指定相应的编译器，gccgo还是gc</li>
+<li><code>-gccgoflags &#39;arg list&#39;</code> 传递参数给gccgo编译连接调用</li>
+<li><code>-gcflags &#39;arg list&#39;</code> 传递参数给5g, 6g, 8g 调用</li>
+<li><code>-installsuffix suffix</code> 为了和默认的安装包区别开来，采用这个前缀来重新安装那些依赖的包，<code>-race</code>的时候默认已经是<code>-installsuffix race</code>,大家可以通过<code>-n</code>命令来验证</li>
+<li><code>-ldflags &#39;flag list&#39;</code> 传递参数给5l, 6l, 8l 调用</li>
+<li><code>-tags &#39;tag list&#39;</code> 设置在编译的时候可以适配的那些tag，详细的tag限制参考里面的 <a target="_blank" rel="noopener" href="http://golang.org/pkg/go/build/">Build Constraints</a></li>
+</ul>
+<h2 id="go-install"><a href="#go-install" class="headerlink" title="go install"></a>go install</h2><p>go install 跟 go build 类似，只是多做了一件事就是安装编译后的文件到指定目录。</p>
+<h2 id="go-get"><a href="#go-get" class="headerlink" title="go get"></a>go get</h2><p>go get命令用于动态获取远程代码包及其依赖包，并进行编译和安装。</p>
+<p>执行命令后一般会下载在GOPATH的src目录下。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go get github.com/PuerkitoBio/goquery</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>-d 只下载不安装</p>
+</li>
+<li><p>-f 只有在你包含了 -u 参数的时候才有效，不让 -u 去验证 import 中的每一个都已经获取了，这对于本地 fork 的包特别有用</p>
+</li>
+<li><p>-fix 在获取源码之后先运行 fix，然后再去做其他的事情</p>
+</li>
+<li><p>-t 同时也下载需要为运行测试所需要的包</p>
+</li>
+<li><p>-u 强制使用网络去更新包和它的依赖包</p>
+</li>
+<li><p>-v 显示执行的命令</p>
+</li>
+</ul>
+<h3 id="go-mod"><a href="#go-mod" class="headerlink" title="go mod"></a>go mod</h3><hr>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>download</td>
+<td>download modules to local cache(下载依赖包)</td>
+</tr>
+<tr>
+<td>edit</td>
+<td>edit go.mod from tools or scripts（编辑go.mod)</td>
+</tr>
+<tr>
+<td>graph</td>
+<td>print module requirement graph (打印模块依赖图)</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>initialize new module in current directory（在当前目录初始化mod）</td>
+</tr>
+<tr>
+<td>tidy</td>
+<td>add missing and remove unused modules(拉取缺少的模块，移除不用的模块)</td>
+</tr>
+<tr>
+<td>vendor</td>
+<td>make vendored copy of dependencies(将依赖复制到vendor下)</td>
+</tr>
+<tr>
+<td>verify</td>
+<td>verify dependencies have expected content (验证依赖是否正确）</td>
+</tr>
+<tr>
+<td>why</td>
+<td>explain why packages or modules are needed(解释为什么需要依赖)</td>
+</tr>
+</tbody></table>
+<p>go.mod 提供了module, require、replace和exclude 四个命令</p>
+<ul>
+<li><code>module</code> 语句指定包的名字（路径）</li>
+<li><code>require</code> 语句指定的依赖项模块</li>
+<li><code>replace</code> 语句可以替换依赖项模块</li>
+<li><code>exclude</code> 语句可以忽略依赖项模块</li>
+</ul>
+<h2 id="go-clean"><a href="#go-clean" class="headerlink" title="go clean"></a>go clean</h2><p>go clean命令用于删除执行其他命令时产生的文件或目录，这些文件包括：</p>
+<ul>
+<li>_obj/ 旧的object目录，由Makefiles遗留</li>
+<li>_test/ 旧的test目录，由Makefiles遗留</li>
+<li>_testmain.go 旧的gotest文件，由Makefiles遗留</li>
+<li>test.out 旧的test记录，由Makefiles遗留</li>
+<li>build.out 旧的test记录，由Makefiles遗留</li>
+<li>*.[568ao] object文件，由Makefiles遗留</li>
+<li>DIR(.exe) 由go build产生</li>
+<li>DIR.test(.exe) 由go test -c产生</li>
+<li>MAINFILE(.exe) 由go build MAINFILE.go产生</li>
+<li>*.so 由 SWIG 产生</li>
+</ul>
+<h2 id="go-fmt"><a href="#go-fmt" class="headerlink" title="go fmt"></a>go fmt</h2><p>go fmt用于检查并格式化成go语言的规范格式。</p>
+<p>我们知道，在go语言中有严格的代码规范，否则编译不通过。不过大部分编译器已经自动实现规范格式，但此命名还是非常有用的。</p>
+<p>参数说明：</p>
+<ul>
+<li><code>-l</code> 显示那些需要格式化的文件</li>
+<li><code>-w</code> 把改写后的内容直接写入到文件中，而不是作为结果打印到标准输出。</li>
+<li><code>-r</code> 添加形如“a[b:len(a)] -&gt; a[b:]”的重写规则，方便我们做批量替换</li>
+<li><code>-s</code> 简化文件中的代码</li>
+<li><code>-d</code> 显示格式化前后的diff而不是写入文件，默认是false</li>
+<li><code>-e</code> 打印所有的语法错误到标准输出。如果不使用此标记，则只会打印不同行的前10个错误。</li>
+<li><code>-cpuprofile</code> 支持调试模式，写入相应的cpufile到指定的文件</li>
+</ul>
+<h2 id="go-list"><a href="#go-list" class="headerlink" title="go list"></a>go list</h2><p>go list 会列出当前安装的包</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">go list</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">John Doe</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="http://example.com/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/">http://example.com/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Go/">Go</a><a class="post-meta__tags" href="/tags/Go%E5%9F%BA%E7%A1%80/">Go基础</a></div><div class="post_share"><div class="social-share" data-image="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="next-post pull-full"><a href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/"><img class="next-cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">MQ技术选型 对比</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>Related Articles</span></div><div class="relatedPosts-list"><div><a href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符"><img class="cover" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2021-11-06</div><div class="title">Go fmt格式化常用占位符</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://i.loli.net/2021/02/24/5O1day2nriDzjSu.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">John Doe</div><div class="author-info__description"></div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">Articles</div><div class="length-num">6</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">Tags</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>Announcement</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>Catalog</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#go-build"><span class="toc-number">1.</span> <span class="toc-text">go build</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-install"><span class="toc-number">2.</span> <span class="toc-text">go install</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-get"><span class="toc-number">3.</span> <span class="toc-text">go get</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#go-mod"><span class="toc-number">3.1.</span> <span class="toc-text">go mod</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-clean"><span class="toc-number">4.</span> <span class="toc-text">go clean</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-fmt"><span class="toc-number">5.</span> <span class="toc-text">go fmt</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#go-list"><span class="toc-number">6.</span> <span class="toc-text">go list</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>Recent Post</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go-常用基础命令"/></a><div class="content"><a class="title" href="/2021/11/18/Go-%E5%B8%B8%E7%94%A8%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Go-常用基础命令">Go-常用基础命令</a><time datetime="2021-11-18T04:14:51.000Z" title="Created 2021-11-18 12:14:51">2021-11-18</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="MQ技术选型 对比"/></a><div class="content"><a class="title" href="/2021/11/09/MQ%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B-%E5%AF%B9%E6%AF%94/" title="MQ技术选型 对比">MQ技术选型 对比</a><time datetime="2021-11-09T03:35:15.000Z" title="Created 2021-11-09 11:35:15">2021-11-09</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="brew 常用命令"/></a><div class="content"><a class="title" href="/2021/11/07/brew-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" title="brew 常用命令">brew 常用命令</a><time datetime="2021-11-07T07:39:35.000Z" title="Created 2021-11-07 15:39:35">2021-11-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Go fmt格式化常用占位符"/></a><div class="content"><a class="title" href="/2021/11/06/Go-%E5%B8%B8%E7%94%A8%E5%8D%A0%E4%BD%8D%E7%AC%A6/" title="Go fmt格式化常用占位符">Go fmt格式化常用占位符</a><time datetime="2021-11-06T11:25:49.000Z" title="Created 2021-11-06 19:25:49">2021-11-06</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解"><img src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/img/default.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="Linux 常用命令详解"/></a><div class="content"><a class="title" href="/2021/11/05/Linux-%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/" title="Linux 常用命令详解">Linux 常用命令详解</a><time datetime="2021-11-05T14:54:10.000Z" title="Created 2021-11-05 22:54:10">2021-11-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2021 By John Doe</div><div class="framework-info"><span>Framework </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>Theme </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="Read Mode"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="Switch Between Light And Dark Mode"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="Toggle between single-column and double-column"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="Setting"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="Table Of Contents"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="Back To Top"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
